@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Le passé simple de l’indicatif – Cours interactif</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Nunito:wght@600;800&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#fff;--line:#cfdcf2;--margin:#d9534f;--ink:#1d2f6f;--text:#22283a;--board:#1f4d3a;--board2:#segment;--chalk:#f4f6ef;--hl:#fff1a8;--ok:#1e7a46;--ko:#c0392b;--soft:#eef3fb;--bg:#e9efe6}
+@media(prefers-color-scheme:dark){:root{--paper:#1b2230;--line:#2b3750;--text:#e6e9f2;--ink:#a9bdff;--soft:#222c40;--bg:#12171f;--hl:#5a4e12}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:17px/1.7 Lora,Georgia,serif}
+header{background:var(--board);color:var(--chalk);padding:28px 20px 0;border-bottom:8px solid #8b5a2b}
+.wrap{max-width:900px;margin:0 auto}
+header h1{margin:0;font:800 clamp(1.7rem,5vw,2.6rem)/1.15 Nunito,sans-serif;letter-spacing:.3px}
+header p{margin:6px 0 18px;opacity:.85}
+nav{display:flex;gap:6px}
+nav button{font:800 1rem Nunito,sans-serif;border:0;padding:12px 22px;border-radius:12px 12px 0 0;background:#2d6a50;color:var(--chalk);cursor:pointer}
+nav button[aria-selected=true]{background:var(--paper);color:var(--board)}
+nav button:focus-visible,.btn:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid #f2b705;outline-offset:2px}
+main{max-width:900px;margin:0 auto;padding:0 12px 60px}
+.page{background:var(--paper);background-image:linear-gradient(var(--line) 1px,transparent 1px);background-size:100% 32px;border-left:3px solid var(--margin);margin-top:0;padding:22px 22px 30px 40px;box-shadow:0 6px 18px rgba(0,0,0,.12)}
+.tab{display:none}.tab.on{display:block}
+h2{font:800 1.6rem Nunito,sans-serif;color:var(--ink);margin:30px 0 8px;border-bottom:3px double var(--margin);padding-bottom:4px}
+h2:first-child{margin-top:0}
+h3{font:800 1.15rem Nunito,sans-serif;color:var(--board);margin:20px 0 4px}
+.def{background:var(--soft);border:2px solid var(--ink);border-radius:10px;padding:10px 16px;margin:12px 0}
+.ex{border-left:5px solid var(--board);background:var(--soft);padding:6px 14px;margin:10px 0;border-radius:0 8px 8px 0}
+.ex i{color:var(--ink)}
+.retenir{background:var(--hl);border:2px dashed var(--margin);border-radius:10px;padding:10px 16px;margin:14px 0}
+mark{background:var(--hl);color:inherit;padding:0 3px;border-radius:3px}
+.tbl{overflow-x:auto;margin:10px 0}
+table{border-collapse:collapse;width:100%;background:var(--paper);min-width:420px}
+th{background:var(--board);color:var(--chalk);font-family:Nunito,sans-serif}
+th,td{border:1px solid var(--ink);padding:5px 10px;text-align:left}
+td:first-child{font-weight:700;color:var(--ink)}
+.intro{background:var(--paper);border-left:3px solid var(--margin);padding:12px 14px 12px 40px;box-shadow:0 2px 6px rgba(0,0,0,.08);margin-top:14px;border-radius:6px}
+.btn{font:800 .95rem Nunito,sans-serif;border:2px solid var(--board);background:var(--board);color:#fff;padding:8px 16px;border-radius:10px;cursor:pointer}
+.btn.alt{background:transparent;color:var(--board)}
+@media(prefers-color-scheme:dark){.btn.alt{color:var(--chalk);border-color:var(--chalk)}}
+.btn.mail{background:var(--margin);border-color:var(--margin);font-size:1.05rem}
+.q{background:var(--paper);border:2px solid var(--ink);border-radius:12px;padding:12px 16px;margin:14px 0}
+.q p{margin:0 0 8px;font-weight:700}
+.q label{display:block;padding:3px 0;cursor:pointer}
+input[type=text],input[type=email],textarea{font:inherit;width:100%;padding:7px 10px;border:2px solid var(--ink);border-radius:8px;background:var(--paper);color:var(--text)}
+input.blank{width:150px;display:inline-block;padding:2px 8px}
+.ans{display:none;margin-top:8px;padding:6px 12px;border-radius:8px;background:var(--hl)}
+.ans.show{display:block}
+.good{border-color:var(--ok)}.bad{border-color:var(--ko)}
+.bar{position:sticky;top:0;z-index:5;background:var(--board);color:var(--chalk);padding:12px 14px;border-radius:0 0 12px 12px;display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between}
+.score{font:800 1.1rem Nunito,sans-serif}
+dialog{border:4px solid var(--margin);border-radius:14px;max-width:520px;width:92%;background:var(--paper);color:var(--text);padding:20px}
+dialog::backdrop{background:rgba(0,0,0,.55)}
+dialog label{display:block;font:800 .9rem Nunito,sans-serif;margin:10px 0 3px}
+.row{display:flex;gap:10px;justify-content:flex-end;margin-top:16px}
+.note{font-size:.85rem;opacity:.8}
+footer{text-align:center;font-size:.85rem;padding:0 10px 30px;opacity:.8}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<h1>Le passé simple de l’indicatif</h1>
+<p>Cours de français – la langue du récit écrit</p>
+<nav role="tablist">
+<button role="tab" id="b1" aria-selected="true" aria-controls="t1">Explication du cours</button>
+<button role="tab" id="b2" aria-selected="false" aria-controls="t2">Entraînement</button>
+</nav></div></header>
+
+<main>
+<!-- COURS -->
+<section id="t1" class="tab on page" role="tabpanel">
+<div class="def"><b>Définition.</b> Le passé simple est un temps simple de l’indicatif qui exprime une action passée <mark>achevée</mark>, <mark>ponctuelle</mark> et située à un moment précis. C’est surtout le temps de la <b>narration écrite</b> : contes, romans, récits historiques et biographies.</div>
+
+<h2>1. Définition et valeur</h2>
+<p>Le passé simple présente un fait comme terminé, sans lien direct avec le présent. Il se distingue de l’imparfait, qui décrit plutôt une action en cours, une habitude ou une description dans le passé.</p>
+<div class="ex">Il <i>marchait</i> dans la forêt quand il <b>aperçut</b> un loup.<br><small><i>marchait</i> = action de fond à l’imparfait ; <b>aperçut</b> = événement bref au passé simple.</small></div>
+<div class="ex">Les troupes <b>débarquèrent</b> en juin. <small>→ action historique achevée.</small></div>
+
+<h2>2. Les emplois principaux</h2>
+<p>Le passé simple sert à raconter les actions principales d’un récit, celles qui font avancer l’histoire.</p>
+<div class="tbl"><table>
+<tr><th>Emploi</th><th>Explication</th><th>Exemple</th></tr>
+<tr><td>Action achevée et ponctuelle</td><td>L’action est brève et délimitée dans le passé.</td><td>La porte <b>s’ouvrit</b> brusquement.</td></tr>
+<tr><td>Succession d’actions</td><td>Il présente des événements qui se suivent.</td><td>Il <b>entra</b>, <b>s’assit</b> et <b>commença</b> à parler.</td></tr>
+<tr><td>Action qui interrompt</td><td>Un événement bref survient pendant une action de fond.</td><td>Nous jouions quand l’orage <b>éclata</b>.</td></tr>
+<tr><td>Récit historique ou littéraire</td><td>Il est typique des textes écrits et narratifs.</td><td>Napoléon <b>traversa</b> les Alpes.</td></tr>
+<tr><td>Fait passé sans conséquence présente</td><td>Il renvoie à un passé clos.</td><td>Elle <b>quitta</b> la ville en 1998.</td></tr>
+</table></div>
+<div class="retenir"><b>À retenir :</b> à l’oral, on emploie généralement le passé composé ; le passé simple est réservé à l’écrit narratif.</div>
+
+<h2>3. Formation générale</h2>
+<p>Le passé simple se construit avec le <b>radical</b> du verbe + une <b>terminaison</b> propre à chaque personne. Les formes varient selon le groupe verbal et le radical. Quatre modèles existent : en <b>-a-</b>, <b>-i-</b>, <b>-u-</b> et <b>-in-</b>.</p>
+<div class="tbl"><table>
+<tr><th>Personne</th><th>en -a</th><th>en -i</th><th>en -u</th><th>en -in</th></tr>
+<tr><td>je / j’</td><td>-ai</td><td>-is</td><td>-us</td><td>-ins</td></tr>
+<tr><td>tu</td><td>-as</td><td>-is</td><td>-us</td><td>-ins</td></tr>
+<tr><td>il / elle / on</td><td>-a</td><td>-it</td><td>-ut</td><td>-int</td></tr>
+<tr><td>nous</td><td>-âmes</td><td>-îmes</td><td>-ûmes</td><td>-înmes</td></tr>
+<tr><td>vous</td><td>-âtes</td><td>-îtes</td><td>-ûtes</td><td>-întes</td></tr>
+<tr><td>ils / elles</td><td>-èrent</td><td>-irent</td><td>-urent</td><td>-inrent</td></tr>
+</table></div>
+
+<h2>4. Verbes du 1<sup>er</sup> groupe et « aller »</h2>
+<p>Les verbes en <i>-er</i> (chanter) et le verbe <i>aller</i> prennent les terminaisons en <b>-a-</b>.</p>
+<div class="tbl"><table>
+<tr><th>Personne</th><th>Chanter</th><th>Aller</th></tr>
+<tr><td>je</td><td>chantai</td><td>allai</td></tr><tr><td>tu</td><td>chantas</td><td>allas</td></tr>
+<tr><td>il / elle / on</td><td>chanta</td><td>alla</td></tr><tr><td>nous</td><td>chantâmes</td><td>allâmes</td></tr>
+<tr><td>vous</td><td>chantâtes</td><td>allâtes</td></tr><tr><td>ils / elles</td><td>chantèrent</td><td>allèrent</td></tr>
+</table></div>
+<div class="retenir"><b>Orthographe :</b> devant -a, les verbes en <i>-cer</i> prennent une cédille et les verbes en <i>-ger</i> gardent un e après le g : il <b>avança</b>, il <b>plongea</b>.</div>
+
+<h2>5. Verbes du 2<sup>e</sup> groupe</h2>
+<p>Les verbes comme <i>finir</i> ont un passé simple en <b>-i-</b>.</p>
+<div class="tbl"><table>
+<tr><th>Personne</th><th>Finir</th></tr>
+<tr><td>je</td><td>finis</td></tr><tr><td>tu</td><td>finis</td></tr><tr><td>il / elle / on</td><td>finit</td></tr>
+<tr><td>nous</td><td>finîmes</td></tr><tr><td>vous</td><td>finîtes</td></tr><tr><td>ils / elles</td><td>finirent</td></tr>
+</table></div>
+<div class="ex">Les élèves <b>finirent</b> leur exercice avant la sonnerie.</div>
+
+<h2>6. Verbes du 3<sup>e</sup> groupe</h2>
+<p>Le 3<sup>e</sup> groupe est plus varié : ses verbes se conjuguent en -i-, -u- ou -in-.</p>
+<h3>Modèle en -i</h3>
+<p>prendre, mettre, dire, écrire, voir, partir, dormir, sentir, servir…</p>
+<div class="tbl"><table>
+<tr><th>Personne</th><th>Prendre</th><th>Dire</th></tr>
+<tr><td>je</td><td>pris</td><td>dis</td></tr><tr><td>tu</td><td>pris</td><td>dis</td></tr>
+<tr><td>il / elle / on</td><td>prit</td><td>dit</td></tr><tr><td>nous</td><td>prîmes</td><td>dîmes</td></tr>
+<tr><td>vous</td><td>prîtes</td><td>dîtes</td></tr><tr><td>ils / elles</td><td>prirent</td><td>dirent</td></tr>
+</table></div>
+<h3>Modèle en -u</h3>
+<p>être, avoir, faire, pouvoir, vouloir, savoir, devoir, recevoir, boire, lire, vivre, courir, connaître…</p>
+<div class="tbl"><table>
+<tr><th>Personne</th><th>Être</th><th>Avoir</th><th>Faire</th></tr>
+<tr><td>je</td><td>fus</td><td>eus</td><td>fis</td></tr><tr><td>tu</td><td>fus</td><td>eus</td><td>fis</td></tr>
+<tr><td>il / elle / on</td><td>fut</td><td>eut</td><td>fit</td></tr><tr><td>nous</td><td>fûmes</td><td>eûmes</td><td>fîmes</td></tr>
+<tr><td>vous</td><td>fûtes</td><td>eûtes</td><td>fîtes</td></tr><tr><td>ils / elles</td><td>furent</td><td>eurent</td><td>firent</td></tr>
+</table></div>
+<p class="note">Les formes de <i>être</i> et <i>avoir</i> sont irrégulières : il faut les mémoriser. (<i>Faire</i> suit en réalité le modèle en -i : fis, fit, fîmes.)</p>
+<h3>Modèle en -in</h3>
+<p>Les verbes <i>venir</i> et <i>tenir</i> et leurs dérivés.</p>
+<div class="tbl"><table>
+<tr><th>Personne</th><th>Venir</th><th>Tenir</th></tr>
+<tr><td>je</td><td>vins</td><td>tins</td></tr><tr><td>tu</td><td>vins</td><td>tins</td></tr>
+<tr><td>il / elle / on</td><td>vint</td><td>tint</td></tr><tr><td>nous</td><td>vînmes</td><td>tînmes</td></tr>
+<tr><td>vous</td><td>vîntes</td><td>tîntes</td></tr><tr><td>ils / elles</td><td>vinrent</td><td>tinrent</td></tr>
+</table></div>
+<div class="ex">Le prince <b>vint</b> au château et <b>tint</b> un long discours.</div>
+
+<h2>7. Passé simple et imparfait</h2>
+<p>Dans un récit, l’<b>imparfait</b> donne le décor, les descriptions, les habitudes ou les actions durables ; le <b>passé simple</b> fait avancer l’histoire.</p>
+<div class="ex">Le soir <i>tombait</i>. Les enfants <i>jouaient</i> dans le jardin quand soudain, un bruit étrange <b>retentit</b>. Ils <b>coururent</b> vers la maison.</div>
+<ul><li><i>tombait, jouaient</i> : imparfait → arrière-plan et action en cours.</li>
+<li><b>retentit, coururent</b> : passé simple → événements brefs et successifs.</li></ul>
+
+<h2>8. Pièges fréquents</h2>
+<ul>
+<li>Ne pas confondre <b>-a</b> et <b>-â</b> : il chanta / nous chantâmes.</li>
+<li>Ne pas confondre <b>-i</b> et <b>-î</b> : il finit / nous finîmes.</li>
+<li>Ne pas confondre <b>-u</b> et <b>-û</b> : il eut / nous eûmes.</li>
+<li>Les verbes en -cer et -ger demandent ç ou ge devant -a : il avança, il plongea.</li>
+<li>Le passé simple ne s’emploie pas pour une habitude : on dira <i>Chaque matin, il allait à l’école</i>, et non <s>il alla à l’école</s>.</li>
+</ul>
+<p style="text-align:center;margin-top:26px"><button class="btn" onclick="go(2)">Je m’entraîne</button></p>
+</section>
+
+<!-- ENTRAINEMENT -->
+<section id="t2" class="tab" role="tabpanel">
+<div class="bar">
+<span class="score" id="score">Score : – / –</span>
+<span>
+<button class="btn alt" style="color:#fff;border-color:#fff" onclick="correct()">Corriger</button>
+<button class="btn mail" onclick="openDlg()">Envoyer à mon enseignant</button>
+</span></div>
+<div class="page" style="margin-top:12px">
+<p class="intro" style="margin-top:0">Réponds aux questions, puis clique sur <b>Corriger</b>. Le bouton <b>Voir la réponse</b> te montre la solution de chaque question. Pour envoyer ton travail, clique sur <b>Envoyer à mon enseignant</b>.</p>
+<h2>Exercice 1 – Vrai ou faux ?</h2><div id="vf"></div>
+<h2>Exercice 2 – QCM</h2><div id="qcm"></div>
+<h2>Exercice 3 – Compléter avec le verbe entre parenthèses, conjugué au passé simple</h2><div id="gap"></div>
+<h2>Exercice 4 – Réponses courtes</h2><div id="short"></div>
+<p style="text-align:center"><button class="btn" onclick="correct()">Corriger les exercices</button></p>
+</div>
+</section>
+</main>
+
+<dialog id="dlg">
+<h3 style="margin-top:0">Envoyer mon exercice</h3>
+<label for="fn">Mon prénom</label><input type="text" id="fn" autocomplete="given-name">
+<label for="se">Mon adresse e-mail</label><input type="email" id="se" autocomplete="email">
+<label for="te">E-mail de mon enseignant</label><input type="email" id="te">
+<div id="err" role="status" class="note" style="font-weight:700;margin-top:10px"></div>
+<div class="row" style="justify-content:flex-start"><button class="btn mail" onclick="sendDirect()">Envoyer directement</button></div>
+<p class="note" style="margin-bottom:4px">Si l’envoi direct ne fonctionne pas, utilise une autre méthode :</p>
+<div style="display:flex;flex-wrap:wrap;gap:6px">
+<button class="btn alt" onclick="via('gmail')">Gmail</button>
+<button class="btn alt" onclick="via('outlook')">Outlook</button>
+<button class="btn alt" onclick="via('mailto')">Application mail</button>
+<button class="btn alt" onclick="via('copy')">Copier le message</button>
+<button class="btn alt" onclick="via('file')">Télécharger (.txt)</button>
+</div>
+<div class="row"><button class="btn alt" onclick="dlg.close()">Fermer</button></div>
+</dialog>
+
+<footer>Cours conçu et préparé par Sid KHALIFA – Nice 2026</footer>
+
+<script>
+const $=id=>document.getElementById(id);
+const VF=[["Le passé simple exprime une action passée achevée et ponctuelle.",1,"Vrai : c’est sa valeur principale."],
+["Le passé simple est le temps habituel de la conversation orale.",0,"Faux : à l’oral, on emploie plutôt le passé composé."],
+["« Nous chantâmes » prend un accent circonflexe sur le a.",1,"Vrai : -âmes, -âtes à la 1re et 2e personne du pluriel."],
+["On écrit correctement : « Chaque matin, il alla à l’école ».",0,"Faux : pour une habitude, on emploie l’imparfait (il allait)."],
+["Les verbes du 2e groupe ont un passé simple en -i (il finit).",1,"Vrai : je finis, il finit, nous finîmes."],
+["On écrit « il plongea » : le e est conservé devant -a.",1,"Vrai : les verbes en -ger gardent le e (comme avança prend ç)."]];
+const QC=[["Quelle est la forme de « finir » à la 1re personne du pluriel ?",["nous finissons","nous finîmes","nous finirent"],1,"nous finîmes (-îmes avec accent circonflexe)."],
+["Passé simple d’« avoir » à la 3e personne du pluriel :",["ils avaient","ils eurent","ils auront"],1,"ils eurent."],
+["Le prince ___ au château.",["venait","vint","viendra"],1,"Le prince vint au château (venir → modèle en -in)."],
+["Dans « Le soir tombait. Un bruit retentit. », quel verbe est au passé simple ?",["tombait","retentit","les deux"],1,"retentit est un événement bref au passé simple ; tombait est à l’imparfait."],
+["Passé simple d’« avancer » à la 3e personne du singulier :",["il avanca","il avança","il avancea"],1,"il avança : cédille devant -a."]];
+const GP=[["Hier, elle ","chanta"," une chanson.","chanter, 3e pers. sing. : chanta"],
+["Nous ","finîmes"," avant la sonnerie.","finir, nous : finîmes"],
+["Ils ","firent"," un gâteau.","faire, ils : firent"],
+["Je ","pris"," mon sac et je sortis.","prendre, je : pris"],
+["Tu ","fus"," très courageux.","être, tu : fus"],
+["Vous ","allâtes"," au marché.","aller, vous : allâtes"]];
+const SH=[["Quelle est la valeur du passé simple ?","Il exprime une action passée, achevée et ponctuelle, sans lien avec le présent ; c’est le temps du récit écrit."],
+["Quel est le rôle de l’imparfait par rapport au passé simple dans un récit ?","L’imparfait décrit le décor, les habitudes et les actions en cours ; le passé simple raconte les événements qui font avancer l’histoire."],
+["Pourquoi ne dit-on pas « Chaque matin, il alla à l’école » ? Corrige la phrase.","Parce que c’est une habitude : « Chaque matin, il allait à l’école »."],
+["Conjugue « tenir » au passé simple, 3e personne du pluriel.","ils / elles tinrent."]];
+const norm=s=>s.trim().toLowerCase().replace(/’/g,"'");
+const esc=s=>s.replace(/&/g,"&amp;").replace(/</g,"&lt;");
+function ans(id,t){return `<button class="btn alt" onclick="$('${id}').classList.toggle('show')">Voir la réponse</button><div class="ans" id="${id}"><b>Réponse :</b> ${t}</div>`}
+$("vf").innerHTML=VF.map((q,i)=>`<div class="q" id="vf${i}"><p>${i+1}. ${q[0]}</p><label><input type="radio" name="vf${i}" value="1"> Vrai</label><label><input type="radio" name="vf${i}" value="0"> Faux</label>${ans("vfa"+i,(q[1]?"Vrai. ":"Faux. ")+q[2])}</div>`).join("");
+$("qcm").innerHTML=QC.map((q,i)=>`<div class="q" id="qc${i}"><p>${i+1}. ${q[0]}</p>${q[1].map((o,j)=>`<label><input type="radio" name="qc${i}" value="${j}"> ${o}</label>`).join("")}${ans("qca"+i,q[1][q[2]]+" – "+q[3])}</div>`).join("");
+$("gap").innerHTML=GP.map((q,i)=>`<div class="q" id="gp${i}"><p style="font-weight:400">${i+1}. ${q[0]}<input type="text" class="blank" id="gi${i}" aria-label="réponse ${i+1}" autocomplete="off"> <b style="color:var(--margin)">(${q[3].split(",")[0]})</b> ${q[2]}</p>${ans("gpa"+i,"<b>"+q[1]+"</b> ("+q[3]+")")}</div>`).join("");
+$("short").innerHTML=SH.map((q,i)=>`<div class="q" id="sh${i}"><p>${i+1}. ${q[0]}</p><textarea rows="2" id="si${i}" aria-label="réponse ${i+1}"></textarea>${ans("sha"+i,q[1])}</div>`).join("");
+
+function mark(id,ok){const e=$(id);e.classList.remove("good","bad");e.classList.add(ok?"good":"bad")}
+function val(n){const r=document.querySelector(`input[name="${n}"]:checked`);return r?r.value:null}
+let last=null;
+function correct(){let s=0,t=0;
+VF.forEach((q,i)=>{t++;const v=val("vf"+i),ok=v!==null&&+v===q[1];s+=ok;mark("vf"+i,ok)});
+QC.forEach((q,i)=>{t++;const v=val("qc"+i),ok=v!==null&&+v===q[2];s+=ok;mark("qc"+i,ok)});
+GP.forEach((q,i)=>{t++;const ok=norm($("gi"+i).value)===norm(q[1]);s+=ok;mark("gp"+i,ok)});
+last={s,t};$("score").textContent=`Score : ${s} / ${t} (les réponses courtes se comparent avec le corrigé)`;
+window.scrollTo({top:$("t2").offsetTop-10,behavior:"smooth"})}
+function go(n){[1,2].forEach(i=>{$("t"+i).classList.toggle("on",i==n);$("b"+i).setAttribute("aria-selected",i==n)});window.scrollTo(0,0)}
+$("b1").onclick=()=>go(1);$("b2").onclick=()=>go(2);
+const dlg=$("dlg");
+function openDlg(){$("err").textContent="";dlg.showModal()}
+function info(m,ok){const e=$("err");e.textContent=m;e.style.color=ok?"var(--ok)":"var(--ko)"}
+function fields(){const fn=$("fn").value.trim(),se=$("se").value.trim(),te=$("te").value.trim(),re=/^[^@\s]+@[^@\s]+\.[^@\s]+$/;
+if(!fn||!re.test(se)||!re.test(te)){info("Complète ton prénom et indique deux adresses e-mail valides.");return null}
+return{fn,se,te}}
+function body(f){correct();
+let b=`Bonjour,\n\nVoici mon entraînement sur le passé simple.\nÉlève : ${f.fn} (${f.se})\nScore (exercices 1 à 3) : ${last.s} / ${last.t}\n\n`;
+b+="EXERCICE 1 – Vrai/Faux\n"+VF.map((q,i)=>{const v=val("vf"+i);return `${i+1}. ${v===null?"(pas de réponse)":v==1?"Vrai":"Faux"}`}).join("\n");
+b+="\n\nEXERCICE 2 – QCM\n"+QC.map((q,i)=>{const v=val("qc"+i);return `${i+1}. ${v===null?"(pas de réponse)":q[1][v]}`}).join("\n");
+b+="\n\nEXERCICE 3 – Compléter\n"+GP.map((q,i)=>`${i+1}. ${$("gi"+i).value||"(vide)"}`).join("\n");
+b+="\n\nEXERCICE 4 – Réponses courtes\n"+SH.map((q,i)=>`${i+1}. ${q[0]}\n   → ${$("si"+i).value||"(vide)"}`).join("\n");
+return b+`\n\nCordialement,\n${f.fn}`}
+async function sendDirect(){const f=fields();if(!f)return;const m=body(f);info("Envoi en cours…",true);
+try{const r=await fetch("https://formsubmit.co/ajax/"+encodeURIComponent(f.te),{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},
+body:JSON.stringify({_subject:"Passé simple – exercices de "+f.fn,_replyto:f.se,_captcha:"false",_template:"table",Élève:f.fn,"E-mail élève":f.se,Score:last.s+" / "+last.t,Travail:m})});
+const j=await r.json();
+if(r.ok&&String(j.success)!=="false")info("Envoyé ! Si c’est la première fois pour cet enseignant, il doit d’abord cliquer sur le lien d’activation reçu par e-mail (pensez à vérifier les courriers indésirables).",true);
+else info("L’envoi direct a échoué"+(j.message?" : "+j.message:"")+". Utilise une autre méthode ci-dessous.")}
+catch(e){info("Envoi direct impossible (connexion ou navigateur). Utilise une autre méthode ci-dessous.")}}
+function via(k){const f=fields();if(!f)return;const m=body(f),sub="Passé simple – exercices de "+f.fn,E=encodeURIComponent;
+if(k=="gmail")window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=${E(f.te)}&cc=${E(f.se)}&su=${E(sub)}&body=${E(m)}`,"_blank");
+else if(k=="outlook")window.open(`https://outlook.live.com/mail/0/deeplink/compose?to=${E(f.te)}&cc=${E(f.se)}&subject=${E(sub)}&body=${E(m)}`,"_blank");
+else if(k=="mailto")location.href=`mailto:${f.te}?cc=${f.se}&subject=${E(sub)}&body=${E(m)}`;
+else if(k=="copy"){const t=`À : ${f.te}\nObjet : ${sub}\n\n${m}`;
+(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(()=>info("Message copié : colle-le dans un e-mail à ton enseignant.",true)).catch(()=>{const a=document.createElement("textarea");a.value=t;document.body.appendChild(a);a.select();let ok=false;try{ok=document.execCommand("copy")}catch(e){}a.remove();info(ok?"Message copié : colle-le dans un e-mail à ton enseignant.":"Copie impossible : utilise le bouton Télécharger.",ok)})}
+else{const u=URL.createObjectURL(new Blob([`À : ${f.te}\nObjet : ${sub}\n\n${m}`],{type:"text/plain;charset=utf-8"}));const a=document.createElement("a");a.href=u;a.download="passe-simple-"+f.fn+".txt";a.click();URL.revokeObjectURL(u);info("Fichier téléchargé : envoie-le en pièce jointe à ton enseignant.",true)}}
+</script>
+</body>
+</html>
